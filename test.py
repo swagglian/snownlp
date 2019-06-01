@@ -34,7 +34,7 @@ import xlrd
 #     for w in keyword_rank.top_index(5):
 #         print(w)
 sentimentslist=[]
-data =xlrd.open_workbook('text.xlsx')
+data =xlrd.open_workbook('MOBICK.xlsx')
 table=data.sheets()[0]
 nrows=table.nrows
 for i in range(nrows):
@@ -42,7 +42,7 @@ for i in range(nrows):
     s = SnowNLP(str)
     print(table.row_values(i),s.sentiments)
     sentimentslist.append(s.sentiments)
-fileObject = open('txt.txt', 'w+')
+fileObject = open('MOBICK.txt', 'w+')
 for ip in sentimentslist:
     fileObject.write(__builtins__.str(ip))
     fileObject.write('\n')
